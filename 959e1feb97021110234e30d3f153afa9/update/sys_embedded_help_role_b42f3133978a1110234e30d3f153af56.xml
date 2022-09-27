@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>10</order>
+        <role display_value="x_402400_api_tests.admin" name="x_402400_api_tests.admin">5d1ffdff974a1110234e30d3f153af72</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-27 02:52:29</sys_created_on>
+        <sys_id>b42f3133978a1110234e30d3f153af56</sys_id>
+        <sys_name>5d1ffdff974a1110234e30d3f153af72</sys_name>
+        <sys_package display_value="api tests" source="x_402400_api_tests">959e1feb97021110234e30d3f153afa9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="api tests">959e1feb97021110234e30d3f153afa9</sys_scope>
+        <sys_update_name>sys_embedded_help_role_b42f3133978a1110234e30d3f153af56</sys_update_name>
+    </sys_embedded_help_role>
+</record_update>

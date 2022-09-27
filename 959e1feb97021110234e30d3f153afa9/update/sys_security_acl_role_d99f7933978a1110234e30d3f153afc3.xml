@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-27 02:54:26</sys_created_on>
+        <sys_id>d99f7933978a1110234e30d3f153afc3</sys_id>
+        <sys_name>x_402400_api_tests_table.x_402400_api_tests.admin</sys_name>
+        <sys_package display_value="api tests" source="x_402400_api_tests">959e1feb97021110234e30d3f153afa9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="api tests">959e1feb97021110234e30d3f153afa9</sys_scope>
+        <sys_security_acl display_value="x_402400_api_tests_table">d19f7933978a1110234e30d3f153afc1</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_d99f7933978a1110234e30d3f153afc3</sys_update_name>
+        <sys_user_role display_value="x_402400_api_tests.admin" name="x_402400_api_tests.admin">5d1ffdff974a1110234e30d3f153af72</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>GlideDateTime/GlideDate/GlideTime</notes>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-26 15:13:33</sys_created_on>
+        <sys_id>a4ce572f97021110234e30d3f153afb7</sys_id>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="api tests" source="x_402400_api_tests">959e1feb97021110234e30d3f153afa9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="api tests">959e1feb97021110234e30d3f153afa9</sys_scope>
+        <sys_update_name>sys_atf_step_a4ce572f97021110234e30d3f153afb7</sys_update_name>
+        <table/>
+        <test display_value="Server Scoped">92aed32f97021110234e30d3f153af88</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=a4ce572f97021110234e30d3f153afb7"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>a4ce572f97021110234e30d3f153afb7</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-26 15:13:33</sys_created_on>
+        <sys_id>e22f972f97021110234e30d3f153afc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-26 15:13:33</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>a4ce572f97021110234e30d3f153afb7</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-26 15:13:33</sys_created_on>
+        <sys_id>ea2f972f97021110234e30d3f153afc6</sys_id>
+        <sys_mod_count>116</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-27 00:58:48</sys_updated_on>
+        <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+    describe('sys_properties.glide.sys.default.tz', function() {&#13;
+        var gqProperties = new global.GlideQuery('sys_properties')&#13;
+            .where('name', 'glide.sys.default.tz')&#13;
+            .selectOne('value')&#13;
+            .get();&#13;
+&#13;
+        it('is null)', function() {&#13;
+            expect(gqProperties.value).toBeNull();&#13;
+        });&#13;
+    });&#13;
+&#13;
+    describe('Local time_zone', function() {&#13;
+        var userId = gs.getUserID();&#13;
+        var gqUser = new global.GlideQuery('sys_user')&#13;
+            .where('sys_id', userId)&#13;
+            .selectOne('time_zone')&#13;
+            .get();&#13;
+&#13;
+        it('is US/Eastern)', function() {&#13;
+            expect(gqUser.time_zone).toBe('US/Eastern');&#13;
+        });&#13;
+    });&#13;
+&#13;
+    describe('When GlideDateTime set to \'2022-01-01 00:00:00\'', function() {&#13;
+        var gdt = new GlideDateTime('2022-01-01 00:00:00');&#13;
+&#13;
+        it('getValue() is \'2022-01-01 00:00:00\'', function() {&#13;
+            expect(gdt.getValue()).toBe('2022-01-01 00:00:00');&#13;
+        });&#13;
+&#13;
+        it('getDisplayValueInternal() is \'2021-12-31 19:00:00\'', function() {&#13;
+            expect(gdt.getDisplayValueInternal()).toBe('2021-12-31 19:00:00');&#13;
+        });&#13;
+&#13;
+        it('getDisplayValuel() is \'2021-12-31 19:00:00\'', function() {&#13;
+            expect(gdt.getDisplayValue()).toBe('2021-12-31 19:00:00');&#13;
+        });&#13;
+&#13;
+        it('getInternalFormattedLocalTime() is \'19:00:00\'', function() {&#13;
+            expect(gdt.getInternalFormattedLocalTime()).toBe('19:00:00');&#13;
+        });&#13;
+		&#13;
+		it('getUserFormattedLocalTime() is \'19:00:00\'', function() {&#13;
+            expect(gdt.getUserFormattedLocalTime()).toBe('19:00:00');&#13;
+        });&#13;
+&#13;
+        describe('getDate() on GlideDateTime', function() {&#13;
+            var gd = gdt.getDate();&#13;
+            describe('returns GlideDate', function() {&#13;
+                it('', function() {&#13;
+                    expect(gd instanceof GlideDate).toBe(true);&#13;
+                });&#13;
+				&#13;
+				it('and getValue() is \'2022-01-01\'', function() {&#13;
+                    expect(gd.getValue()).toBe('2022-01-01');&#13;
+                });&#13;
+&#13;
+                it('and getDisplayValue() is \'2022-01-01\'', function() {&#13;
+                    expect(gd.getDisplayValue()).toBe('2022-01-01');&#13;
+                });&#13;
+				&#13;
+				it('and getDisplayValueInternal() is \'2021-12-31\'', function() {&#13;
+                    expect(gd.getDisplayValueInternal()).toBe('2021-12-31');&#13;
+                });&#13;
+            });&#13;
+        });&#13;
+&#13;
+        describe('getLocalDate() on GlideDateTime', function() {&#13;
+            var gd = gdt.getLocalDate();&#13;
+            describe('returns GlideDate', function() {&#13;
+                it('', function() {&#13;
+                    expect(gd instanceof GlideDate).toBe(true);&#13;
+                });&#13;
+				&#13;
+				it('and getValue() is \'2021-21-31\'', function() {&#13;
+                    expect(gd.getValue()).toBe('2021-12-31');&#13;
+                });&#13;
+&#13;
+                it('and getDisplayValue() is \'2021-21-31\'', function() {&#13;
+                    expect(gd.getDisplayValue()).toBe('2021-12-31');&#13;
+                });&#13;
+				&#13;
+				it('and getDisplayValueInternal() is \'2021-12-30\'', function() {&#13;
+                    expect(gd.getDisplayValueInternal()).toBe('2021-12-30');&#13;
+                });&#13;
+            });&#13;
+        });&#13;
+&#13;
+        describe('getTime() on GlideDateTime', function() {&#13;
+            var gt = gdt.getTime();&#13;
+            describe('returns GlideTime', function() {&#13;
+                it('', function() {&#13;
+                    expect(gt instanceof GlideTime).toBe(true);&#13;
+                });&#13;
+				&#13;
+                it('and getDisplayValue() is \'19:00:00\'', function() {&#13;
+                    expect(gt.getDisplayValue()).toBe('19:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getDisplayValueInternal() is \'19:00:00\'', function() {&#13;
+                    expect(gt.getDisplayValue()).toBe('19:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getValue() is \'1970-01-01 00:00:00\'', function() {&#13;
+                    expect(gt.getValue()).toBe('1970-01-01 00:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getByFormat(\'HH:mm:ss\') is \'00:00:00\'', function() {&#13;
+                    expect(gt.getByFormat('HH:mm:ss')).toBe('00:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getByFormat(\'hh:mm a\') is \'12:00 AM\'', function() {&#13;
+                    expect(gt.getByFormat('h:mm a')).toBe('12:00 AM');&#13;
+                });&#13;
+&#13;
+                it('and getHourLocalTime() is 7', function() {&#13;
+                    expect(gt.getHourLocalTime()).toBe(7);&#13;
+                });&#13;
+&#13;
+                it('and getHourOfDayLocalTime() is 19', function() {&#13;
+                    expect(gt.getHourOfDayLocalTime()).toBe(19);&#13;
+                });&#13;
+&#13;
+                it('and getHourOfDayUTC() is 0', function() {&#13;
+                    expect(gt.getHourOfDayUTC()).toBe(0);&#13;
+                });&#13;
+&#13;
+                it('and getHourUTC() is 0', function() {&#13;
+                    expect(gt.getHourUTC()).toBe(0);&#13;
+                });&#13;
+            });&#13;
+        });&#13;
+&#13;
+        describe('getLocalTime() on GlideDateTime', function() {&#13;
+            var gt = gdt.getLocalTime();&#13;
+            describe('returns GlideTime', function() {&#13;
+                it('', function() {&#13;
+                    expect(gt instanceof GlideTime).toBe(true);&#13;
+                });&#13;
+&#13;
+                it('and getDisplayValue() is \'14:00:00\'', function() {&#13;
+                    expect(gt.getDisplayValue()).toBe('14:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getDisplayValueInternal() is \'14:00:00\'', function() {&#13;
+                    expect(gt.getDisplayValue()).toBe('14:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getValue() is \'1970-01-01 19:00:00\'', function() {&#13;
+                    expect(gt.getValue()).toBe('1970-01-01 19:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getByFormat(\'HH:mm:ss\') is \'19:00:00\'', function() {&#13;
+                    expect(gt.getByFormat('HH:mm:ss')).toBe('19:00:00');&#13;
+                });&#13;
+&#13;
+                it('and getByFormat(\'hh:mm a\') is \'7:00 PM\'', function() {&#13;
+                    expect(gt.getByFormat('h:mm a')).toBe('7:00 PM');&#13;
+                });&#13;
+&#13;
+                it('and getHourLocalTime() is 2', function() {&#13;
+                    expect(gt.getHourLocalTime()).toBe(2);&#13;
+                });&#13;
+&#13;
+                it('and getHourOfDayLocalTime() is 14', function() {&#13;
+                    expect(gt.getHourOfDayLocalTime()).toBe(14);&#13;
+                });&#13;
+&#13;
+                it('and getHourOfDayUTC() is 19', function() {&#13;
+                    expect(gt.getHourOfDayUTC()).toBe(19);&#13;
+                });&#13;
+&#13;
+                it('and getHourUTC() is 7', function() {&#13;
+                    expect(gt.getHourUTC()).toBe(7);&#13;
+                });&#13;
+            });&#13;
+        });&#13;
+    });&#13;
+&#13;
+     describe('When GlideDateTime set to \'2022-01-01 00:00:00\'', function() {&#13;
+        it('format to local date and time using 12 hour system', function() {&#13;
+			var gdt = new GlideDateTime('2022-01-01 00:00:00');&#13;
+			var day = gdt.getLocalDate();&#13;
+			var gt = gdt.getLocalTime();&#13;
+			var time = gt.getByFormat('h:mm a');&#13;
+            expect(day + ' ' + time).toBe('2021-12-31 7:00 PM');&#13;
+        });&#13;
+    });&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+jasmine.getEnv().randomizeTests(false);&#13;
+jasmine.getEnv().execute();</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

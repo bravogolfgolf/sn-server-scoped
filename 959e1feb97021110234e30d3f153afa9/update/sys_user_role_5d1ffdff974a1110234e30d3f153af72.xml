@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_402400_api_tests.admin</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>admin</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-27 02:52:29</sys_created_on>
+        <sys_id>5d1ffdff974a1110234e30d3f153af72</sys_id>
+        <sys_name>x_402400_api_tests.admin</sys_name>
+        <sys_package display_value="api tests" source="x_402400_api_tests">959e1feb97021110234e30d3f153afa9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="api tests">959e1feb97021110234e30d3f153afa9</sys_scope>
+        <sys_update_name>sys_user_role_5d1ffdff974a1110234e30d3f153af72</sys_update_name>
+    </sys_user_role>
+</record_update>

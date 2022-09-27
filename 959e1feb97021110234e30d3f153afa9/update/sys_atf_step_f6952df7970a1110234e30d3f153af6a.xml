@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>GlideRecord/GlideElement/GlideObject</notes>
+        <order>2</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-27 01:01:15</sys_created_on>
+        <sys_id>f6952df7970a1110234e30d3f153af6a</sys_id>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="api tests" source="x_402400_api_tests">959e1feb97021110234e30d3f153afa9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="api tests">959e1feb97021110234e30d3f153afa9</sys_scope>
+        <sys_update_name>sys_atf_step_f6952df7970a1110234e30d3f153af6a</sys_update_name>
+        <table/>
+        <test display_value="Server Scoped">92aed32f97021110234e30d3f153af88</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=f6952df7970a1110234e30d3f153af6a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>f6952df7970a1110234e30d3f153af6a</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-27 01:01:15</sys_created_on>
+        <sys_id>5ba5e93b970a1110234e30d3f153afe3</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-27 03:28:34</sys_updated_on>
+        <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+    describe('With GlideRecord in Table', function() {&#13;
+        var gr = new GlideRecord('x_402400_api_tests_table');&#13;
+        gr.initialize();&#13;
+        var sys_id = gr.insert();&#13;
+&#13;
+        it('', function() {&#13;
+            expect(gr.get('sys_id', sys_id)).toBe(true);&#13;
+        });&#13;
+&#13;
+        describe('getElement(\'sys_created_on\') on GlideRecord', function() {&#13;
+            var ge = gr.getElement('sys_created_on');&#13;
+&#13;
+            describe('returns GlideElement', function() {&#13;
+                it('', function() {&#13;
+                    expect(ge instanceof GlideElement).toBe(true);&#13;
+                });&#13;
+&#13;
+                it('and getGlideObject on GlideElement throws JavaException', function() {&#13;
+                    expect(function() {&#13;
+                        ge.getGlideObject();&#13;
+                    }).toThrowError(JavaException, 'com.glide.script.fencing.MethodNotAllowedException: Function getGlideObject is not allowed in scope x_402400_api_tests');&#13;
+                });&#13;
+            });&#13;
+        });&#13;
+    });&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+jasmine.getEnv().randomizeTests(false);&#13;
+jasmine.getEnv().execute();</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>f6952df7970a1110234e30d3f153af6a</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-27 01:01:15</sys_created_on>
+        <sys_id>93a5e93b970a1110234e30d3f153afe3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-27 01:01:15</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>
